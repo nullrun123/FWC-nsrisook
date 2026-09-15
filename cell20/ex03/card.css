@@ -1,0 +1,67 @@
+
+
+body{
+    font-family: monospace;
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.card{
+    width: 270px;
+    border:1px solid;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    td{ 
+        padding: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+    }
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.profile-img > img{
+    width: 100%;
+}
+h1{
+    margin: 15px;
+
+}
+
+.description{
+    color:rgba(0, 0, 0, 0.41);
+    margin-bottom: 5px;
+}
+
+.icons-img{
+    display: flex;
+    gap:10px;
+    img{
+        width: 25px;
+    }
+    margin: 10px 0;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+
+}
+
+.contact{
+    background: black;
+    text-align: center;
+    a{
+        color: #fff;
+        font-size: 18px;
+        padding: 5px 0;
+        text-decoration: none;
+    }
+}
+
