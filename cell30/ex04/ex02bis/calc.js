@@ -1,14 +1,13 @@
-let solveA = document.getElementById("numberA");
-let solveB = document.getElementById("numberB");
-let operator = document.getElementById("operator");
-let form = document.getElementById("calculator");
+let $solveA = $('#numberA');
+let $solveB = $('#numberB');
+let $operator = $("#operator")
 
-form.addEventListener("submit", (e) => {
+
+$("#calculator").submit(function (e) { 
   e.preventDefault();
-
-  let a = solveA.value;
-  let b = solveB.value;
-  let op = operator.value;
+  let a = $solveA.val();
+  let b = $solveB.val();
+  let op = $operator.val();
   let IsValidate = validate(a, op, b);
   if (IsValidate) {
     let result = calculator(a, op, b);
@@ -18,8 +17,9 @@ form.addEventListener("submit", (e) => {
   
 });
 
+
 const validate = (a, op, b) => {
-  if (a < 0 || b < 0 || isNaN(a) || isNaN(b) || !a.trim() || !b.trim()) {
+  if (isNaN(a) || isNaN(b) ||   a < 0 || b < 0 || !a.trim() || !b.trim()) {
     console.log("Error :(");
     alert("Error :(");
     return false;
