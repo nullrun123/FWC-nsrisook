@@ -9,6 +9,11 @@ $(window).on("load", function(){
   todo.forEach((todo) => createTodo(todo));
 });
 
+$(".btnAddTodo").click(function () { 
+    AddTodo();
+});
+
+
 const createTodo = (name) => {
   const $newTodo = $(`
         <div class="todo" id="${name}">
@@ -75,7 +80,6 @@ const getCookie = (name) => {
   }
   return null;
 };
-
 
 
 // test clear cookie
