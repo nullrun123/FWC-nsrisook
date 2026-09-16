@@ -1,13 +1,12 @@
 
 let list = document.getElementById('ft_list');
-let todo = [];
 let cookie = [];
-// ติด cookie อยู่
+
 window.addEventListener("load", (event) => {
-    cookie = getCookie("todos");
-    todo = [...cookie];
-    console.log(todo);
-    clearCookie('todos');
+    // clearCookie("todos");
+    cookie = getCookie("todos") || [];
+    console.log("window cookie : ",cookie)
+    let todo = [...cookie];
     todo.forEach((todo)=> createTodo(todo));
 });
 
@@ -20,31 +19,41 @@ const createTodo = (name)=>{
     `
     Newtodo.className = "todo";
     Newtodo.id = name;
-    
-    todo.push(name);
     list.appendChild(Newtodo);
-    console.log(todo);
+    console.log("Create successfully : ",name);
+    // console.log(todo);
     setCookie();
 }
 
 const AddTodo = ()=>{
-    let name = prompt("Input Name Todo :")
-    createTodo(name);
+   const name = prompt('Enter new Todo :');
+    if (name && name.trim() !== '') {
+        createTodo(name);
+    }
 }
 
 const deleteTodo = (name)=>{
-    confirm("Are you sure?");
-    todo = todo.filter(n => n !== name);
-    console.log("Delete successfully : ",todo);
-    document.getElementById(name).remove();
-    setCookie();
+    if (confirm('Do you really want to delete this Todo?')) {
+        document.getElementById(name).remove();
+        setCookie();
+    }
+    console.log("Delete successfully");
+  
 }
 
 
 const setCookie = () =>{
+    let todos = [];
+    let fr_listTodo = list.querySelectorAll('div');
+    fr_listTodo.forEach(item =>{
+        todos.push(item.id);
+    })
+    console.log("set cookie ",todos)
+    // set options cookie
     const d = new Date();
     d.setTime(d.getTime()+ (24*60*60*1000));
-    let arraytodo = JSON.stringify(todo);
+    let arraytodo = JSON.stringify(todos);
+
     document.cookie = `todos=${arraytodo}; expires = ${d.toUTCString()}; path=/`;
 
 }
@@ -52,8 +61,9 @@ const setCookie = () =>{
 const getCookie = (name)=>{
     let decodedCookie = decodeURIComponent(document.cookie);
     let cookies = decodedCookie.split(';').map(c => c.trim());
+    console.log(cookies);
     for (let cookie of cookies) {
-
+        // console.log(cookie)
         if (cookie.startsWith(name + '=')) {
             let value = cookie.substring(name.length + 1);
             try {
@@ -66,9 +76,10 @@ const getCookie = (name)=>{
     return null;
 }
 
+
+// test clear cookie 
 const clearCookie = (name) => {
     if (!name) {
-        console.warn("clearCookie: name is missing/null, aborting");
         return;
     }
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
