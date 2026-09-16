@@ -9,13 +9,13 @@ form.addEventListener("submit", (e) => {
   let a = solveA.value;
   let b = solveB.value;
   let op = operator.value;
+  
   let IsValidate = validate(a, op, b);
   if (IsValidate) {
     let result = calculator(a, op, b);
     console.log(result);
     alert(result);
   }
-  
 });
 
 const validate = (a, op, b) => {
