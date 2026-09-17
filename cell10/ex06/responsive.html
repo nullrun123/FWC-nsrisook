@@ -1,36 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            tr > td {
-                border: 1px solid;
-                height: 100vh;
-                
-            }
-
-            .left{
-                background-color:red;
-            }
-            .right{
-                background-color: blue;
-            }
-            
-        
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+      table {
+        width: 100%;
+        border-collapse:collapse;
+        tr > td {
+          border: 1px solid;
+          height: 100vh;
         }
+
+        .left {
+          background-color: red;
+        }
+        .right {
+          background-color: blue;
+        }
+
+        @media (max-width: 768px) {
+          td {
+            display: block;
+          }
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <table>
-        <tr>
-           <td class="left">First cell</td> 
-           <td class="right">Second cell</td>
-        </tr>
+      <tr>
+        <td class="left">First cell</td>
+        <td class="right">Second cell</td>
+      </tr>
     </table>
-</body>
+  </body>
 </html>
