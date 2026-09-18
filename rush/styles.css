@@ -18,7 +18,6 @@
   --bgcontact: #c5c5c5;
 }
 
-
 /* Navigation Bar */
 nav {
   width: 100%;
@@ -38,12 +37,11 @@ nav {
   }
 }
 
-
 .navmenu {
   display: flex;
   gap: 15px;
   a {
-    font-size:20px;
+    font-size: 20px;
     text-decoration: none;
     color: #000;
   }
@@ -84,15 +82,43 @@ nav {
   }
 }
 
-.bg-pattern{
+.bg-pattern {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0.2;
   background-color: #f9f9f9;
-background-image:  repeating-linear-gradient(to right, transparent 0, transparent 1.1666666666666667px, #f9f9f9 1.1666666666666667px, #f9f9f9 3.5px, transparent 3.5px, transparent 4.666666666666667px), repeating-linear-gradient(to bottom, transparent 0, transparent 1.1666666666666667px, #f9f9f9 1.1666666666666667px, #f9f9f9 3.5px, transparent 3.5px, transparent 4.666666666666667px), linear-gradient(to bottom, #b5b5b5 0.42px, transparent 0.42px), linear-gradient(to right, #b5b5b5 0.42px, transparent 0.42px) ;
-background-size: 100% 100%, 100% 100%, 14px 14px, 14px 14px;
-background-position: 0 0, 0 0, 0 -0.14px, -0.14px 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent 1.1666666666666667px,
+      #f9f9f9 1.1666666666666667px,
+      #f9f9f9 3.5px,
+      transparent 3.5px,
+      transparent 4.666666666666667px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 1.1666666666666667px,
+      #f9f9f9 1.1666666666666667px,
+      #f9f9f9 3.5px,
+      transparent 3.5px,
+      transparent 4.666666666666667px
+    ),
+    linear-gradient(to bottom, #b5b5b5 0.42px, transparent 0.42px),
+    linear-gradient(to right, #b5b5b5 0.42px, transparent 0.42px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    14px 14px,
+    14px 14px;
+  background-position:
+    0 0,
+    0 0,
+    0 -0.14px,
+    -0.14px 0;
 }
 
 .about {
@@ -136,7 +162,7 @@ background-position: 0 0, 0 0, 0 -0.14px, -0.14px 0;
       top: 100%;
       left: 50%;
       transform: translate(-50%, -100%);
-      min-width: 400px;
+      min-width: 350px;
       border: 1px solid;
     }
   }
@@ -167,11 +193,11 @@ background-position: 0 0, 0 0, 0 -0.14px, -0.14px 0;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 10px;
-  a{
-    color:#000;
+  a {
+    color: #000;
     text-decoration: none;
   }
-  p{
+  p {
     font-size: clamp(14px, 4vw, 20px);
   }
 }
@@ -250,11 +276,36 @@ background-position: 0 0, 0 0, 0 -0.14px, -0.14px 0;
   }
 }
 
+/* skils */
+
+#Skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid;
+  padding: 12px;
+  max-width: 100%;
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+  }
+}
+
 /* Education */
 
-.education {
+.Education {
   position: relative;
-  min-height: 100vh;
   display: block;
   padding: 50px;
   h1 {
@@ -287,7 +338,7 @@ background-position: 0 0, 0 0, 0 -0.14px, -0.14px 0;
   font-size: clamp(1px, 5vw, 25px);
   .degrees {
     font-weight: bold;
-    font-size: clamp(10px, 5vw 25px);
+    font-size: clamp(10px, 5vw, 25px);
   }
 }
 
@@ -368,13 +419,67 @@ footer {
   }
 }
 
-.foot-bg{
-position: absolute;
-height: 100%;
-width: 100%;
-background-color: #222222;
-opacity: 0.2;
-background-image:  linear-gradient(30deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(150deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(30deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(150deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(60deg, #0c0c0c77 25%, transparent 25.5%, transparent 75%, #0c0c0c77 75%, #0c0c0c77), linear-gradient(60deg, #0c0c0c77 25%, transparent 25.5%, transparent 75%, #0c0c0c77 75%, #0c0c0c77);
-background-size: 14px 25px;
-background-position: 0 0, 0 0, 7px 12px, 7px 12px, 0 0, 7px 12px;
+.foot-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #222222;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(
+      30deg,
+      #0c0c0c 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #0c0c0c 87.5%,
+      #0c0c0c
+    ),
+    linear-gradient(
+      150deg,
+      #0c0c0c 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #0c0c0c 87.5%,
+      #0c0c0c
+    ),
+    linear-gradient(
+      30deg,
+      #0c0c0c 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #0c0c0c 87.5%,
+      #0c0c0c
+    ),
+    linear-gradient(
+      150deg,
+      #0c0c0c 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #0c0c0c 87.5%,
+      #0c0c0c
+    ),
+    linear-gradient(
+      60deg,
+      #0c0c0c77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #0c0c0c77 75%,
+      #0c0c0c77
+    ),
+    linear-gradient(
+      60deg,
+      #0c0c0c77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #0c0c0c77 75%,
+      #0c0c0c77
+    );
+  background-size: 14px 25px;
+  background-position:
+    0 0,
+    0 0,
+    7px 12px,
+    7px 12px,
+    0 0,
+    7px 12px;
 }
