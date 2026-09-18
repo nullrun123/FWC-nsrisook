@@ -28,6 +28,10 @@
         background: #fff;
         border-radius:20px;
       }
+      .welcome{
+        text-align: center;
+      }
+      
       .box-select {
         display: flex;
         gap: 2em;
@@ -40,7 +44,7 @@
         background-color: black;
         a{
             padding: 15px 25px;
-            font-size: 26px;
+            font-size: clamp(5px,5vw,26px);
             position: relative;
             z-index: 2;
             text-decoration: none;
@@ -66,6 +70,19 @@
         animation: btnscaleDown 0.2s ;
         animation-fill-mode:forwards;
         
+      }
+
+     @media (max-width: 768px) {
+        body{
+          padding: 0px;
+        }
+        .box-select{
+          display: block;
+          
+        }
+        .card-person{ 
+          margin-top: 10px;
+        }
       }
 
       @keyframes btnscaleDown{

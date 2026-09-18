@@ -213,14 +213,13 @@ nav {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: bold;
-}
+  .work {
+    background-color: red;
+  }
 
-#work {
-  background-color: red;
-}
-
-#website {
-  background-color: green;
+  .website {
+    background-color: green;
+  }
 }
 
 .card-header {
